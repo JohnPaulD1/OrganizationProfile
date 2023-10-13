@@ -12,7 +12,6 @@ namespace OrganizationProfile
 {
     public partial class frmConfirmation : Form
     {
-        StudentInformationClass studentInformationClass = new StudentInformationClass();
 
         public frmConfirmation()
         {
@@ -21,13 +20,13 @@ namespace OrganizationProfile
 
         private void frmConfirmation_Load(object sender, EventArgs e)
         {
-            lblStudentNo.Text = studentInformationClass.SetStudentNo.ToString();
-            lblName.Text = studentInformationClass.SetFullName;
-            lblProgram.Text = studentInformationClass.SetProgram;
-            lblBirthday.Text = studentInformationClass.SetBirthday;
-            lblGender.Text = studentInformationClass.SetGender;
-            lblContactNo.Text = studentInformationClass.SetContactNo.ToString();
-            lblAge.Text = studentInformationClass.SetAge.ToString();
+            lblStudentNo.Text = StudentInformationClass.SetStudentNo.ToString();
+            lblName.Text = StudentInformationClass.SetFullName;
+            lblProgram.Text = StudentInformationClass.SetProgram;
+            lblBirthday.Text = StudentInformationClass.SetBirthday;
+            lblGender.Text = StudentInformationClass.SetGender;
+            lblContactNo.Text = StudentInformationClass.SetContactNo.ToString();
+            lblAge.Text = StudentInformationClass.SetAge.ToString();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
