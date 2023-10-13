@@ -26,8 +26,8 @@ namespace OrganizationProfile
         StudentInformationClass studentInformationClass = new StudentInformationClass();
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-           
-                
+
+
 
         }
     }
