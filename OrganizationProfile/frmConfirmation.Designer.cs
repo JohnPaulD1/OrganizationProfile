@@ -38,7 +38,7 @@
             btnSubmit = new Button();
             lblStudentNo = new Label();
             lblName = new Label();
-            lblProgram = new Label();
+            lblPrograms = new Label();
             lblAge = new Label();
             lblBirthday = new Label();
             lblGender = new Label();
@@ -143,14 +143,14 @@
             lblName.TabIndex = 9;
             lblName.Text = "    ";
             // 
-            // lblProgram
+            // lblPrograms
             // 
-            lblProgram.AutoSize = true;
-            lblProgram.Location = new Point(128, 111);
-            lblProgram.Name = "lblProgram";
-            lblProgram.Size = new Size(19, 15);
-            lblProgram.TabIndex = 10;
-            lblProgram.Text = "    ";
+            lblPrograms.AutoSize = true;
+            lblPrograms.Location = new Point(128, 111);
+            lblPrograms.Name = "lblPrograms";
+            lblPrograms.Size = new Size(19, 15);
+            lblPrograms.TabIndex = 10;
+            lblPrograms.Text = "    ";
             // 
             // lblAge
             // 
@@ -197,7 +197,7 @@
             Controls.Add(lblGender);
             Controls.Add(lblBirthday);
             Controls.Add(lblAge);
-            Controls.Add(lblProgram);
+            Controls.Add(lblPrograms);
             Controls.Add(lblName);
             Controls.Add(lblStudentNo);
             Controls.Add(btnSubmit);
@@ -227,7 +227,7 @@
         private Button btnSubmit;
         private Label lblStudentNo;
         private Label lblName;
-        private Label lblProgram;
+        private Label lblPrograms;
         private Label lblAge;
         private Label lblBirthday;
         private Label lblGender;

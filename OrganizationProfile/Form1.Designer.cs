@@ -255,6 +255,7 @@
             Controls.Add(txtStudentNo);
             Name = "frmRegistration";
             Text = "Organization Profile";
+            Load += frmRegistration_Load;
             ResumeLayout(false);
             PerformLayout();
         }

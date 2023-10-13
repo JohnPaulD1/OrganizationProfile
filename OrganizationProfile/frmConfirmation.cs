@@ -15,6 +15,8 @@ namespace OrganizationProfile
 
         private string _FullName;
         private int _Age;
+        private long _ContactNo;
+        private long _StudentNo;
 
         public frmConfirmation()
         {
@@ -23,7 +25,9 @@ namespace OrganizationProfile
 
         private void frmConfirmation_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+
     }
 }
