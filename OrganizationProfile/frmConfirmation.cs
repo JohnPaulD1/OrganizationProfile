@@ -13,11 +13,6 @@ namespace OrganizationProfile
     public partial class frmConfirmation : Form
     {
 
-        private string _FullName;
-        private int _Age;
-        private long _ContactNo;
-        private long _StudentNo;
-
         public frmConfirmation()
         {
             InitializeComponent();
@@ -25,9 +20,15 @@ namespace OrganizationProfile
 
         private void frmConfirmation_Load(object sender, EventArgs e)
         {
-            
+
         }
 
+        StudentInformationClass studentInformationClass = new StudentInformationClass();
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+           
+                
 
+        }
     }
 }

@@ -124,6 +124,7 @@
             btnSubmit.TabIndex = 7;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // lblStudentNo
             // 
