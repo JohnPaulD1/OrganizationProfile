@@ -13,7 +13,7 @@ namespace OrganizationProfile
         private long _ContactNo;
         private long _StudentNo;
 
-
+        StudentInformationClass studentInformationClass = new StudentInformationClass();
         public frmRegistration()
         {
             InitializeComponent();
@@ -43,6 +43,16 @@ namespace OrganizationProfile
             for (int i = 0; i < 6; i++)
             {
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
+            }
+
+            string[] ListOfGender = new string[]
+            {
+                "Male",
+                "Female"
+            };
+            for (int i = 0; i < 2; i++)
+            {
+                cbGender.Items.Add(ListOfGender[i].ToString());
             }
         }
 
@@ -83,6 +93,20 @@ namespace OrganizationProfile
             }
 
             return _Age;
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            studentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+            studentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
+            studentInformationClass.SetProgram = cbPrograms.Text;
+            studentInformationClass.SetGender = cbGender.Text;
+            studentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
+            studentInformationClass.SetAge = Age(txtAge.Text);
+            studentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
+
+            frmConfirmation frm = new frmConfirmation();
+            frm.ShowDialog();
         }
     }
 }

@@ -21,21 +21,18 @@ namespace OrganizationProfile
 
         private void frmConfirmation_Load(object sender, EventArgs e)
         {
-
+            lblStudentNo.Text = studentInformationClass.SetStudentNo.ToString();
+            lblName.Text = studentInformationClass.SetFullName;
+            lblProgram.Text = studentInformationClass.SetProgram;
+            lblBirthday.Text = studentInformationClass.SetBirthday;
+            lblGender.Text = studentInformationClass.SetGender;
+            lblContactNo.Text = studentInformationClass.SetContactNo.ToString();
+            lblAge.Text = studentInformationClass.SetAge.ToString();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            studentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            studentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
-            studentInformationClass.SetProgram = cbPrograms.Text;
-            studentInformationClass.SetGender = cbGender.Text;
-            studentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
-            studentInformationClass.SetAge = Age(txtAge.Text);
-            studentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyyMM-dd");
-
-            frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
+            
 
 
 
