@@ -55,26 +55,41 @@ namespace OrganizationProfile
                 cbGender.Items.Add(ListOfGender[i].ToString());
             }
         }
-        
+         
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+            StudentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
+            StudentInformationClass.SetProgram = cbPrograms.Text;
+            StudentInformationClass.SetGender = cbGender.Text;
+            StudentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
+            StudentInformationClass.SetAge = Age(txtAge.Text);
+            StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
+
+            frmConfirmation frm = new frmConfirmation();
+            frm.ShowDialog();
+        }
+
         public long StudentNumber(string studNum)
         {
             try
             {
-                _StudentNo = long.Parse(studNum);
+                if (string.IsNullOrEmpty(studNum))
+                {
+                    throw new ArgumentNullException("Fill up 'Student Number' ");
+                }
+                else
+                {
+                    _StudentNo = long.Parse(studNum);
+                }
             }
-
-            catch(ArgumentNullException)
+            catch (ArgumentNullException ae)
             {
-                MessageBox.Show("Fill up 'Student Number' ");
+                MessageBox.Show(ae.Message);
+                txtStudentNo.Text = (" '02000XXXXXX' ");
             }
-            catch(FormatException)
-            {
-                MessageBox.Show("Invalid Format 'Student Number' ");
-
-            }
-
             return _StudentNo;
-
         }
 
         public long ContactNo(string Contact)
@@ -87,12 +102,13 @@ namespace OrganizationProfile
                 }
                 else
                 {
-                    throw new OverflowException("Exceeded 'Contact Number' ");
+                    throw new IndexOutOfRangeException("Exceeded 'Contact Number' ");
                 }
             }
-            catch(OverflowException oe)
+            catch (IndexOutOfRangeException ie)
             {
-                MessageBox.Show(oe.Message);
+                MessageBox.Show(ie.Message);
+                txtContactNo.Text = " ";
             }
             return _ContactNo;
         }
@@ -107,13 +123,8 @@ namespace OrganizationProfile
                 }
                 else
                 {
-                    throw new ArgumentException("Please fill up 'Name' ");
                     throw new FormatException("Invalid Format 'Name' ");
                 }
-            }
-            catch(ArgumentException ae)
-            {
-                MessageBox.Show(ae.Message);
             }
             catch (FormatException fe)
             {
@@ -132,28 +143,15 @@ namespace OrganizationProfile
                 }
                 else
                 {
-                    throw new OverflowException("Incorrect 'Age' ");
+                    throw new OverflowException("Try Again! 'Age' ");
                 }
             }
-            catch(OverflowException oe)
+            catch (OverflowException oe)
             {
                 MessageBox.Show(oe.Message);
+                txtAge.Text = " ";
             }
             return _Age;
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            StudentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
-            StudentInformationClass.SetProgram = cbPrograms.Text;
-            StudentInformationClass.SetGender = cbGender.Text;
-            StudentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
-            StudentInformationClass.SetAge = Age(txtAge.Text);
-            StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
-
-            frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
         }
     }
 }
