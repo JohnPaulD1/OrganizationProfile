@@ -13,7 +13,7 @@ namespace OrganizationProfile
         private long _ContactNo;
         private long _StudentNo;
 
-        
+
         public frmRegistration()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace OrganizationProfile
                 cbGender.Items.Add(ListOfGender[i].ToString());
             }
         }
-         
+
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -152,6 +152,11 @@ namespace OrganizationProfile
                 txtAge.Text = " ";
             }
             return _Age;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

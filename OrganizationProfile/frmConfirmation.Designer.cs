@@ -117,13 +117,14 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.BackColor = Color.LightCyan;
             btnSubmit.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnSubmit.Location = new Point(104, 325);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(119, 30);
             btnSubmit.TabIndex = 7;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
             // lblStudentNo
@@ -193,6 +194,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.CadetBlue;
             ClientSize = new Size(344, 378);
             Controls.Add(lblContactNo);
             Controls.Add(lblGender);

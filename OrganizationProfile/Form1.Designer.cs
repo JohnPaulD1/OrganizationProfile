@@ -106,12 +106,13 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Yu Gothic UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(23, 15);
             label2.Name = "label2";
-            label2.Size = new Size(175, 37);
+            label2.Size = new Size(166, 37);
             label2.TabIndex = 7;
             label2.Text = "Registration";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -219,20 +220,25 @@
             // 
             // btnRegister
             // 
+            btnRegister.BackColor = Color.LightCyan;
+            btnRegister.Cursor = Cursors.Hand;
+            btnRegister.FlatAppearance.BorderColor = Color.Black;
+            btnRegister.FlatAppearance.BorderSize = 0;
+            btnRegister.FlatStyle = FlatStyle.Popup;
             btnRegister.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegister.Location = new Point(342, 261);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(105, 34);
             btnRegister.TabIndex = 19;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // frmRegistration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.AntiqueWhite;
+            BackColor = Color.CadetBlue;
             ClientSize = new Size(781, 319);
             Controls.Add(btnRegister);
             Controls.Add(datePickerBirthday);
